@@ -10,7 +10,7 @@
 
 <p>
 <a target="_blank" href="https://www.slimframework.com/" title="Slim Framework 3"><img src="https://img.shields.io/badge/PHP-Slim%20Framework%203-brightgreen.svg"></a>
-<a target="_blank" href="https://github.com/mskian/email-subscription-api/blob/master/LICENSE" title="License: GPL"><img src="https://img.shields.io/badge/License-MIT-yellowgreen.svg"></a>
+<a target="_blank" href="https://github.com/mskian/email-subscription-api/blob/master/LICENSE" title="License: MIT"><img src="https://img.shields.io/badge/License-MIT-yellowgreen.svg"></a>
 </p>
 
 ## Requirements
