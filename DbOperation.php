@@ -1,5 +1,7 @@
 <?php
 
+require_once dirname(__FILE__) . '/Data.php';
+
 class DbOperation
 {
     private $con;
@@ -15,6 +17,8 @@ class DbOperation
     function registerUser($name, $email)
     {
         if (!$this->isUserExist($email)) {
+            $name = Data::clean_name($name);
+            $email = Data::clean_email($email);
             $stmt = $this->con->prepare("INSERT INTO emsubs (name, email) VALUES (?, ?)");
             $stmt->bind_param("ss", $name, $email);
             if ($stmt->execute())
@@ -27,6 +31,7 @@ class DbOperation
 // Method to get subscriber by email
 function getUserByEmail($email)
 {
+    $email = Data::clean_email($email);
     $stmt = $this->con->prepare("SELECT id, name, email FROM emsubs WHERE email = ?");
     $stmt->bind_param("s", $email);
     $stmt->execute();
@@ -55,10 +60,10 @@ function getUserByEmail($email)
         return $users;
     }
 
-
     // check if email already exist
     function isUserExist($email)
     {
+        $email = Data::clean_email($email);
         $stmt = $this->con->prepare("SELECT id FROM emsubs WHERE email = ?");
         $stmt->bind_param("s", $email);
         $stmt->execute();
