@@ -102,6 +102,8 @@ API URL ➡️ `https://api.example.com/users`
 
 Just Fork this respo & Send Pull Request
 
+1 - <a href="https://github.com/InterferenceObject" title="InterferenceObject">@InterferenceObject</a> ▶️ Added data sanitization for extra security
+
 ## License
 
 MIT
