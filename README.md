@@ -6,6 +6,7 @@
 
 <br>
 
+<p>PHP Rest API for Collects the Website/Blog Visitors Email into Database.</p>
 
 <p>
 <a target="_blank" href="https://www.slimframework.com/" title="Slim Framework 3"><img src="https://img.shields.io/badge/PHP-Slim%20Framework%203-brightgreen.svg"></a>
