@@ -39,6 +39,49 @@ CREATE TABLE `emsubs` (
 
 - Next Open `Config.php` & Add Database Username, password & DB Name
 
+## PHP cURL
+
+```
+<?php
+
+/*
+* Post data's via PHP cURL
+*/
+    
+    // POST Fields
+    $data = array(
+        'name' => 'Santhosh Veer',
+        'email' => 'hello@example.com'
+    );
+
+// REST API URL
+$url = "http://localhost/v2/register";
+
+    // cURL 
+    $ch = curl_init();
+    curl_setopt($ch, CURLOPT_URL, $url);
+    curl_setopt($ch, CURLOPT_RETURNTRANSFER, true);
+    curl_setopt($ch, CURLOPT_IPRESOLVE, CURL_IPRESOLVE_V4 );
+    curl_setopt($ch, CURLOPT_CONNECTTIMEOUT, 7); //Timeout after 7 seconds
+    curl_setopt($ch, CURLOPT_HEADER ,0);  // DO NOT RETURN HTTP HEADERS
+    curl_setopt($ch, CURLOPT_POST, true);
+    curl_setopt($ch, CURLOPT_POSTFIELDS, $data);
+
+    // Print Output
+    $output = curl_exec($ch);
+    $err = curl_error($ch);
+
+    curl_close($ch);
+
+    //echo $output;
+
+    if ($err) {
+        echo "cURL Error #:" . $err;
+      } else {
+        echo $output;
+      }
+```
+
 ## Responses
 
 - For Post Method
