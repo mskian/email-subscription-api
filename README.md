@@ -82,6 +82,11 @@ $url = "http://localhost/v2/register";
       }
 ```
 
+## API End Points
+
+`/register` - Post Data's
+`/users` - Get Data's
+
 ## Responses
 
 - For Post Method
